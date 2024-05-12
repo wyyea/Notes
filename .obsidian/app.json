@@ -8,5 +8,6 @@
   "vimMode": true,
   "spellcheck": false,
   "attachmentFolderPath": "./attachments",
-  "promptDelete": false
+  "promptDelete": false,
+  "alwaysUpdateLinks": true
 }

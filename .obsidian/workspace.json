@@ -13,9 +13,29 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ics/7. exception.md",
+                "file": "networks/1. application_layer.md",
                 "mode": "source",
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "12f61462e1be74a5",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "networks/attachments/dns_recu.png"
+              }
+            }
+          },
+          {
+            "id": "b80ca3a02f70d156",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "networks/attachments/dns_iter.png"
               }
             }
           }
@@ -48,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#TBD",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,7 +85,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -85,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ics/7. exception.md",
+                "file": "networks/1. application_layer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ics/7. exception.md",
+                "file": "networks/1. application_layer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ics/7. exception.md"
+                "file": "networks/1. application_layer.md"
               }
             }
           }
@@ -146,17 +167,31 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "07ed0bf23033946e",
+  "active": "112f7b36157f4b83",
   "lastOpenFiles": [
-    "ics/6. memory.md",
-    "ics/4. Link.md",
+    "networks/attachments/dns_recu.png",
+    "networks/1. application_layer.md",
+    "networks/attachments/dns_iter.png",
+    "networks/attachments/DNS.png",
+    "networks/attachments/smtp.png",
+    "networks/attachments/http_respond.jpg",
+    "networks/attachments/http_request.jpg",
+    "ics/8. IO.md",
+    "networks/attachments/url.png",
+    "networks/attachments/Pasted image 20240512235855.png",
+    "networks/attachments",
+    "os/3. persistence.md",
+    "networks",
+    "os/attachments/unix_fs_disk.png",
     "ics/7. exception.md",
-    "ics/attachments/main_stack.jpg",
+    "os/attachments/bus.jpg",
+    "os/attachments",
+    "ics/6. memory.md",
+    "os",
+    "ics/4. Link.md",
+    "ics/2. data_representation.md",
     "main_stack.jpg.md",
-    "ics/attachments/9.jpg",
     "ics/attachments",
-    "ics/9.jpg",
-    "9.jpg",
     "Untitled/Untitled.md",
     "ics",
     "Untitled"
