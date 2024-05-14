@@ -13,9 +13,39 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "networks/3. network_layer.md",
+                "file": "networks/5. network_layer_control_plane.md",
                 "mode": "source",
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "34d7b1141133c22e",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "networks/attachments/bgp_policy.png"
+              }
+            }
+          },
+          {
+            "id": "8fd9b535ecd6d3ed",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "networks/attachments/dv_routing_loop.png"
+              }
+            }
+          },
+          {
+            "id": "944a96d9ed2d34af",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "networks/attachments/ls_oscillate.png"
               }
             }
           }
@@ -85,7 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "networks/3. network_layer.md",
+                "file": "networks/5. network_layer_control_plane.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "networks/3. network_layer.md",
+                "file": "networks/5. network_layer_control_plane.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +155,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "networks/3. network_layer.md"
+                "file": "networks/5. network_layer_control_plane.md"
               }
             }
           }
@@ -148,19 +178,20 @@
   },
   "active": "07ed0bf23033946e",
   "lastOpenFiles": [
-    "networks/2. transport_layer.md",
-    "networks/3. network_layer.md",
-    "networks/attachments/tcp_cubic.png",
-    "networks/attachments/AIMD.png",
-    "networks/attachments/congestion_control.png",
-    "networks/attachments/Pasted image 20240514121027.png",
-    "networks/attachments/Pasted image 20240514120946.png",
-    "networks/attachments/handshake_server.png",
-    "networks/attachments/handshake_client.png",
-    "networks/attachments/tcp_rdt.png",
-    "networks/attachments/tcp_format.png",
-    "networks/attachments/SR_2.png",
-    "networks/1. application_layer.md",
+    "networks/4. network_layer_data_plane.md",
+    "networks/3. transport_layer.md",
+    "networks/2. application_layer.md",
+    "networks/5. network_layer_control_plane.md",
+    "networks/attachments/bgp_policy.png",
+    "networks/attachments/dv_routing_loop.png",
+    "networks/attachments/dv.png",
+    "networks/attachments/ls_oscillate.png",
+    "networks/attachments/Pasted image 20240514224151.png",
+    "networks/attachments/Pasted image 20240514224135.png",
+    "networks/attachments/ipv6_tunnel.png",
+    "networks/attachments/ipv6_format.png",
+    "networks/attachments/dhcp.png",
+    "networks/attachments/ipv4_format.png",
     "ics/8. IO.md",
     "networks/attachments",
     "os/3. persistence.md",
