@@ -68,7 +68,7 @@ tags: []
 + 目标：
   + BBR能够正常探测实时带宽
   + 允许Reno/CUBIC达到BBR相同的带宽(在low BDP情况下)
-+ ![time_scale_1.png](bbr/attachments/time_scale_1.png) ![time_scale_2.png](bbr/attachments/time_scale_2.png)
++ ![time_scale_1.png](attachments/time_scale_1.png) ![time_scale_2.png](attachments/time_scale_2.png)
 + BBR-native
   + 超过2s, 使Reno能够正常增长到RTT=30ms,带宽=25Mbps(4K video)从BDP到2*BDP而不发生丢包
   + 小于3s，使BBR能够及时探测实时带宽
