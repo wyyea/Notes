@@ -1,59 +1,53 @@
----
-id: bbr_v2
-aliases: []
-tags: []
----
-
-# 算法细节
-## 启动(Startup)
-### 主要方法
-+ 使用```BBRStartuppacintGain(2.77)```和```BBRStartupCwndGain(2)```, 经过$O(log_2(BDP))$轮找到```BBR.max_bw```
+# 1 算法细节
+## 1 启动(Startup)
+### 1.1 主要方法
++ 使用 ```BBRStartuppacingGain(2.77)``` 和 ```BBRStartupCwndGain(2)```, 经过 $O(log_2(BDP))$ 轮找到 ```BBR.max_bw```
 + 探测到最大带宽后可能的队列深度不超过```(cwnd_gain - 1) * estimated_BDP = 1.77 * estimated_BDP```
 + 使用两个方面判断是否管道已满: ```BBR.max_bw```出现平坦区域，丢包
 
-### ```BBR.max_bw```出现平坦区域
+### 1.2 ```BBR.max_bw```出现平坦区域
 + ```BBR.max_bw```曲线出现平坦区域，即不再发生增长
 + 连续三轮都增长都不超过25%，三轮可以确定平坦区域不是由接收窗口暂时导致的，三轮内接收窗口一般能够增大(```receive-window auto-tuning```)
 
-### 丢包
+### 1.3 丢包
 + 下列三个情况同时满足：
   + 连接已经进入**fast recovery**至少一个RTT
   + 丢包率超过```BBRLossThresh(2%)```至少一个RTT
   + 在```BBRStartupFullLossCnt=3```个非连续区域发生丢包
 + 三个情况同时满足能过滤掉突发丢包的因素
 
-## 排空(Drain)
-### 主要方法
-+ 使用```pacing_gain = 1/BBRStartupCwndGain < 1```，期望一轮内排空队列
+## 2 排空(Drain)
+### 2.1 主要方法
++ 使用 ```pacing_gain = 1/BBRStartupCwndGain < 1```，期望一轮内排空队列
 + ```cwnd_gain = BBRStartupCwndGain```不变
 
-### 退出条件
+### 2.2 退出条件
 + ```packets_in_flight <= BDP```
 + 退出后进入ProbeBW
 
-## 探测带宽(ProbeBW)
-### 主要方法
+## 3 探测带宽(ProbeBW)
+### 3.1 主要方法
 + 轮流进行：以更高速率发送，以更低速率发送，以相同速率发送
 + 按序经过4个状态：DOWN，CRUISE，REFILL，UP
 
-### ProbeBW_DOWN
+### 3.2 ProbeBW_DOWN
 + 降低发送速率，设置```pacing_gain=0.9```
 + 退出条件：下列两项同时满足，退出后进入CRUISE
   + 存在**free headroom**，```packets_in_flight <= BBRHeadroom * BBR.inflight_hi```，留出空闲带宽用于带宽分享或突发容忍
   - [ ] (1-BBRHeadroom ?)      
   + 瓶颈链路的队列已排空，```packets_in_flight <= BBR.BDP```
 
-### ProbeBW_CRUISE
+### 3.3 ProbeBW_CRUISE
 + 以相同速率发送，设置```pacing_gain = 1.0```
 + 会对丢包做出反应，降低```BBR.bw_lo, BBR.inflight_lo```，丢包指示了带宽和管道容量可能降低
 + 退出条件：到达需要进行带宽探测的时间，退出后进入REFILL
 
-### ProbeBW_REFILL
+### 3.4 ProbeBW_REFILL
 + 将```bw_lo, inflight_lo```设置为```infinity```，只通过```bw_hi, inflight_hi```来限制连接
 + 设置```pacing_gain = 1.0```，先将链路填满，避免在buffer较浅的情况下，刚进入UP阶段就收到丢包且此时链路未填满(丢包由```pacing_gain=1.25```引起)，从而使```inflight_hi```被低估
 + 退出条件：一个RTT后即退出(一般能够填满链路)，进入UP
 
-### ProbeBW_UP
+### 3.5 ProbeBW_UP
 + 提高发送速率，设置```pacing_gain = 1.25```，探测可用带宽的增加
 + ```bw_hi```：在丢包率不超过```BBRLossThresh```时，将```bw_hi```设置为新探测到的更大的值(若新值更大)
 + ```inflight_hi```：增长先慢后快，增长量按指数增长
@@ -63,7 +57,7 @@ tags: []
   + 已经保持在ProbeBW_UP至少1个```min_rtt```，且队列已足够大，即```packets_in_flight > 1.25 * BBR.bdp```
   + 丢包率超过```BBRLossThresh(2%)```
 
-### ProbeBW的周期考虑
+### 3.6 ProbeBW的周期考虑
 + ProbeBW会影响其他基于丢包的拥塞控制算法(CUBIC/Reno)
 + 目标：
   + BBR能够正常探测实时带宽
@@ -105,7 +99,7 @@ tags: []
     return min(BBR.bdp, cwnd)
 ```
     
-### 代码
+### 3.7 代码
 ```
 /* The core state machine logic for ProbeBW: */
   BBRUpdateProbeBWCyclePhase():
@@ -134,8 +128,8 @@ tags: []
         BBRStartProbeBW_DOWN()
 ```
 
-## 探测往返时延(ProbeRTT)
-### 主要方法
+## 4 探测往返时延(ProbeRTT)
+### 4.1 主要方法
 + 在估计```BBR.min_rtt```之前，先进入```ProbeRTT```阶段，排空队列，避免队列增长导致RTT增长从而最大可容许cwnd增长，最终队列增长，形成循环
 + 设置```cwnd_gain = BBRProbeRTTCwndGain = 0.5```
 + 每过```MinRTTFilterLen=10s = 2 * ProbeRTTInterval```更新一次```BBR.min_rtt```，使用两段```ProbeRTT```的测量结果来更新，更具鲁棒性
@@ -145,11 +139,11 @@ tags: []
   - [ ] 转移到CRUISE, 避免ProbeRTT后增加inflight导致丢包?
   + 否则，转移到```Startup```
 
-### 设计原因
+### 4.2 设计原因
 + ```ProbeRTTDuration=200ms```，足够长使不同RTT的流有重叠的```ProbeRTT```阶段，同时足够短使得浪费的吞吐量不超过2%
 + ```ProbeRTTInterval=5s```，足够短使快速适应链路的变化，同时足够长使得交互式应用常常会在5s内有低传输率的阶段，**该阶段会被捕捉**，从而不需要进行```ProbeRTT```即可更新```BBR.min_rtt```
 
-### 代码
+### 4.3 代码
 ```
 BBRUpdateMinRTT()
     BBR.probe_rtt_expired =
@@ -213,3 +207,4 @@ BBRCheckProbeRTT():
       (C.delivered + packets_in_flight) ? : 1
 ```
 - [ ] 在```BBR.state == ProbeRTT```时```BBR.probe_rtt_min_delay```的更新逻辑存在问题？
+

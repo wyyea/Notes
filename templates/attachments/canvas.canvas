@@ -1,0 +1,12 @@
+{
+	"nodes":[
+		{"id":"2d1eb622826678fd","x":-600,"y":-160,"width":700,"height":100,"type":"group","label":"group1"},
+		{"id":"80225885460c8a49","x":-170,"y":-140,"width":250,"height":60,"type":"text","text":"world"},
+		{"id":"0025d6a36b0701ba","x":-580,"y":-140,"width":250,"height":60,"type":"text","text":"hello"},
+		{"id":"1e64fe3c88bdd2fe","x":200,"y":-140,"width":250,"height":60,"type":"text","text":"wyyea"}
+	],
+	"edges":[
+		{"id":"eadcf5c645389d62","fromNode":"0025d6a36b0701ba","fromSide":"right","toNode":"80225885460c8a49","toSide":"left"},
+		{"id":"2026e0cc1f4649ac","fromNode":"2d1eb622826678fd","fromSide":"right","toNode":"1e64fe3c88bdd2fe","toSide":"left"}
+	]
+}
