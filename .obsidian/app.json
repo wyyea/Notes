@@ -1,5 +1,6 @@
 {
   "pdfExportSettings": {
+    "includeName": false,
     "pageSize": "Letter",
     "landscape": false,
     "margin": "0",
@@ -9,5 +10,7 @@
   "spellcheck": false,
   "attachmentFolderPath": "./attachments",
   "promptDelete": false,
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "showRibbon": false,
+  "showInlineTitle": true
 }

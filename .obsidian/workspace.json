@@ -4,52 +4,37 @@
     "type": "split",
     "children": [
       {
-        "id": "b58e9ad55c1a79e1",
+        "id": "75b12137b464d1d0",
         "type": "tabs",
         "children": [
           {
-            "id": "07ed0bf23033946e",
+            "id": "1ee687307e11ad37",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "networks/5. network_layer_control_plane.md",
+                "file": "db/2.sql.md",
                 "mode": "source",
+                "backlinks": false,
                 "source": false
               }
             }
           },
           {
-            "id": "34d7b1141133c22e",
+            "id": "d02c19956aea7426",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "networks/attachments/bgp_policy.png"
-              }
-            }
-          },
-          {
-            "id": "8fd9b535ecd6d3ed",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "networks/attachments/dv_routing_loop.png"
-              }
-            }
-          },
-          {
-            "id": "944a96d9ed2d34af",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "networks/attachments/ls_oscillate.png"
+                "file": "db/1.rational_model.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -99,7 +84,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 255.5
   },
   "right": {
     "id": "0c31dc8b0f7e9241",
@@ -115,7 +100,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "networks/5. network_layer_control_plane.md",
+                "file": "db/1.rational_model.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,10 +117,28 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "networks/5. network_layer_control_plane.md",
+                "file": "db/1.rational_model.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
+            }
+          },
+          {
+            "id": "e9025cfe247e0561",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "db/1.rational_model.md"
+              }
+            }
+          },
+          {
+            "id": "be348af5693098dd",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
             }
           },
           {
@@ -148,22 +151,13 @@
                 "useHierarchy": true
               }
             }
-          },
-          {
-            "id": "e9025cfe247e0561",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "networks/5. network_layer_control_plane.md"
-              }
-            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 301.5,
     "collapsed": true
   },
   "left-ribbon": {
@@ -173,39 +167,60 @@
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
-      "command-palette:打开命令面板": false
+      "command-palette:打开命令面板": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
+      "obsidian-kanban:创建新看板": false,
+      "obsidian-projects:Open projects": false
     }
   },
-  "active": "07ed0bf23033946e",
+  "active": "d02c19956aea7426",
   "lastOpenFiles": [
-    "networks/4. network_layer_data_plane.md",
-    "networks/3. transport_layer.md",
-    "networks/2. application_layer.md",
-    "networks/5. network_layer_control_plane.md",
-    "networks/attachments/bgp_policy.png",
-    "networks/attachments/dv_routing_loop.png",
-    "networks/attachments/dv.png",
-    "networks/attachments/ls_oscillate.png",
-    "networks/attachments/Pasted image 20240514224151.png",
-    "networks/attachments/Pasted image 20240514224135.png",
-    "networks/attachments/ipv6_tunnel.png",
-    "networks/attachments/ipv6_format.png",
-    "networks/attachments/dhcp.png",
-    "networks/attachments/ipv4_format.png",
-    "ics/8. IO.md",
-    "networks/attachments",
+    "db/2.sql.md",
+    "db/1.rational_model.md",
+    "db/attachments/ddl.png",
+    "db/attachments",
+    "bbr/ns3.md",
+    "db",
+    "diary/2024-09-04.md",
+    "templates/template.md",
+    "bbr/attachments/Modeling_BBR’s_Interactions_with_Loss-Based_Congestion_Control.pdf",
+    "bbr/attachments/ns_log_level.png",
+    "bbr/attachments/ns_log_level.png",
+    "bbr/bbr_v2.md",
+    "bbr/bbr_related.md",
+    "bbr/attachments/When_to_use_and_when_not_to_use_BBR:_An_empirical_analysisEand_evaluation_study.pdf",
+    "bbr/bbr.md",
+    "diary/2024-07-18.md",
+    "templates/attachments/BBR_v2.pdf",
+    "未命名看板.md",
+    "Projects - Demo Project/5 Mistakes I Made When I Started Using Obsidian.md",
     "os/3. persistence.md",
-    "networks",
-    "ics/7. exception.md",
-    "os/attachments",
-    "ics/6. memory.md",
-    "os",
-    "ics/4. Link.md",
-    "ics/2. data_representation.md",
-    "main_stack.jpg.md",
-    "ics/attachments",
-    "Untitled/Untitled.md",
-    "ics",
-    "Untitled"
+    "Projects - Demo Project/What I Learned From Taking 15,000 Notes.md",
+    "Projects - Demo Project/Why You Should Be Taking More Notes.md",
+    "Projects - Demo Project/The Easiest Way to Start Taking Notes.md",
+    "Projects - Demo Project/The Best Notes You'll Ever Make.md",
+    "Projects - Demo Project",
+    "templates/attachments/demo.png",
+    "networks/2. application_layer.md",
+    "networks/3. transport_layer.md",
+    "networks/4. network_layer_data_plane.md",
+    "diary",
+    "未命名.canvas",
+    "2024-07-18.md",
+    "networks/5. network_layer_control_plane.md",
+    "templates/attachments/demo.excalidraw.md",
+    "templates/attachments/canvas.canvas",
+    "templates/BBR_v2.pdf.md",
+    "templates/attachments",
+    "templates/attachments/Pasted image 20240718174716.png",
+    "os/attachments/pic_1.png",
+    "os/attachments/bus.jpg_",
+    "templates/attachments/pic_3.png",
+    "templates/attachments/pic_3.png",
+    "templates/attachments/Drawing 2024-07-18 00.31.58.excalidraw.md",
+    "templates/BBR_v2.pdf",
+    "templates/attachments/jang.png",
+    "templates/attachments/Pasted image 20240718171333.png",
+    "Excalidraw/Drawing 2024-07-18 00.20.10.excalidraw.md"
   ]
 }

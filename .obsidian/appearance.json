@@ -1,5 +1,12 @@
 {
   "accentColor": "",
   "theme": "moonstone",
-  "baseFontSize": 16
+  "baseFontSize": 16,
+  "cssTheme": "AnuPpuccin",
+  "enabledCssSnippets": [
+    "pic_center2",
+    "pic_center",
+    "extended-colorschemes"
+  ],
+  "showViewHeader": true
 }
